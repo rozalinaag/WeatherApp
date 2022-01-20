@@ -1,0 +1,39 @@
+{% extends 'weather/base.html' %}
+
+{% block content %}
+<div class="container mt-5" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-4 offset-1">
+            <h1>Weather in your city</h1>
+            <form action="" method="post" id="1">
+                {% csrf_token %}
+                <label for="city">City</label>
+                {{ form.name }}
+                <input type="submit" name="send" value="search" class="mt-2 btn btn-danger">
+            </form>
+        </div>
+        <div class="col-4 offset-2">
+            <h1>Information</h1>
+
+            {% for info in all_info %}
+            <form id="2" method="post">
+                {% csrf_token %}
+                <div class="alert alert-info">
+                    <div class="row">
+                        <div class="col-7">
+                            <button name="delete" value = "{{ info.city }}" class = "close">x</button>
+                            <b>City: </b> {{info.city}} <br>
+                            <b>Temperature: </b>{{ info.temp }} <sup>o</sup> <br>
+                            <div class="col-2 offset-1">
+                                <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="picture"
+                                     class="img-thumbnail">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
