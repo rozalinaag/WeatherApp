@@ -1,7 +1,7 @@
 # WeatherApp
-Погодное приложение на Django!
+Weather app on Django!
 
-Приложение показывает актуальную погоду во всех городах мира. Ввводим нужный город, нажимаем Search и город отображается рядом в колонке "Информация". 
-Пользователь может удалять города и не может добавлять дважды один и тот же город.
+The application shows the current weather in all cities of the world. Enter the desired city, press Search and the city is displayed next to it in the "Information" column.
+The user can delete cities and cannot add the same city twice.
 
 ![image](https://user-images.githubusercontent.com/59352861/150299633-7b5252b3-50a8-424d-9ebb-2a5fd5729046.png)
